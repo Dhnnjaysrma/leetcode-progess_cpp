@@ -1,19 +1,15 @@
+class Solution {  /*dhananjay sharma*/
+ public:
+  vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> numToIndex;
 
-\dhananjay sharma\
-
-
-var twoSum = function (nums, target) {
-    result = [];
-    index_map = new Map();
-    for (let i = 0; i < nums.length; i++) {
-        let difference = target - nums[i];
-        if (index_map.has(difference)) {
-            result[0] = i;
-            result[1] = index_map.get(difference);
-            break;
-        } else {
-            index_map.set(nums[i], i);
-        }
+    for (int i = 0; i < nums.size(); ++i) {
+      if (const auto it = numToIndex.find(target - nums[i]);
+          it != cend(numToIndex))
+        return {it->second, i};
+      numToIndex[nums[i]] = i;
     }
-    return result;
+
+    throw;
+  }
 };
