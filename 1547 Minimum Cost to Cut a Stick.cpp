@@ -5,7 +5,7 @@ class Solution {
     cuts.push_back(n);
     sort(begin(cuts), end(cuts));
 
-    // dp[i][j] := minCost(cuts[i..j])
+    
     vector<vector<int>> dp(cuts.size(), vector<int>(cuts.size()));
 
     for (int d = 2; d < cuts.size(); ++d)
